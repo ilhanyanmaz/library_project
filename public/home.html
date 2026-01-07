@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kütüphane Sistemi</title>
+    <!-- Bootstrap Dosyası -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Kendi Tasarımımız -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="kitaplar-696x435.jpg">
+</head>
+
+<body onload="loadBooks()">
+
+    <!-- Üst Menü -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">📚 Kütüphane Sistemi</a>
+            <button onclick="logout()" class="btn btn-outline-light btn-sm">Çıkış Yap</button>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">📖 Kitap Listesi</h2>
+            <a href="add.html" class="btn btn-success shadow-sm">+ Yeni Kitap</a>
+        </div>
+
+        <div class="table-container">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th class="py-3 ps-3">Kitap Adı</th>
+                        <th class="py-3">Yazar</th>
+                        <th class="py-3">Sayfa Sayısı</th>
+                        <!-- DEĞİŞİKLİK BURADA: text-center ekledik ki başlık ortalansın -->
+                        <th class="py-3 text-center" style="width: 200px;">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="book-list">
+                    <!-- JavaScript burayı otomatik dolduracak -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -127,3 +127,67 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
+
+/* =====================================================
+   RESPONSIVE EKLEMELER (MEVCUT KODLARA DOKUNMADAN)
+   ===================================================== */
+
+/* Evrensel responsive ayarlar */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Kartlar mobilde tam genişlik */
+.card {
+    width: 100%;
+    margin: 10px auto;
+}
+
+/* Tablolar mobilde taşmasın */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Navbar küçük ekranda taşmasın */
+.navbar {
+    flex-wrap: wrap;
+}
+
+/* =========================
+   TABLET (768px ve üstü)
+   ========================= */
+@media (min-width: 768px) {
+
+    .card {
+        max-width: 600px;
+        margin: 20px auto;
+    }
+
+    .table-container {
+        padding: 30px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   LAPTOP & MASAÜSTÜ (1024px+)
+   ========================= */
+@media (min-width: 1024px) {
+
+    .card {
+        max-width: 800px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+}

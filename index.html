@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <title>Giriş Yap</title>
+    <!-- Bootstrap CSS Kütüphanesi -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Özel CSS Dosyamız -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tarayıcı Sekmesi İkonu -->
+    <link rel="icon" type="image/png" href="kitaplar-696x435.jpg">
+    <!-- Mobil uyumluluk için viewport ayarı -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="login-bg" onload="checkAuth()"> <!-- Sayfa yüklenince giriş kontrolü yap -->
+
+    <!-- Giriş Kartı -->
+    <div class="card card-modern p-5 fade-in" style="width: 400px;">
+        <div class="text-center mb-5">
+            <h3 class="mb-2">Giriş Yap</h3>
+            <p class="text-muted-light small">Devam etmek için hesabınıza erişin.</p>
+        </div>
+
+        <!-- Giriş Formu -->
+        <form onsubmit="login(event)">
+            <!-- Kullanıcı Adı Alanı -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Kullanıcı Adı</label>
+                <input type="text" class="form-control" id="username" placeholder="Kullanıcı adınızı girin" required
+                    autocomplete="off">
+            </div>
+
+            <!-- Şifre Alanı -->
+            <div class="mb-4">
+                <label for="password" class="form-label">Şifre</label>
+                <input type="password" class="form-control" id="password" placeholder="Şifrenizi girin" required>
+            </div>
+
+            <!-- Giriş Butonu -->
+            <button class="btn btn-primary-modern w-100 mb-3">
+                Giriş Yap
+            </button>
+        </form>
+
+        <!-- Kayıt Ol Linki -->
+        <div class="text-center pt-3 border-top border-secondary border-opacity-25">
+            <small class="text-muted-light">Hesabınız yok mu?</small>
+            <a href="register.html" class="link-modern ms-1">Kayıt Ol</a>
+        </div>
+    </div>
+
+    <!-- Javascript Dosyası -->
+    <script src="app.js"></script>
+</body>
+
+</html>

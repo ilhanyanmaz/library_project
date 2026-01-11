@@ -149,7 +149,7 @@ async function loadBooks() {
         // --- Toplam Kitap Sayısını Güncelle ---
         const countBtn = document.getElementById('total-books-btn');
         if (countBtn) {
-            countBtn.innerText = `📚 Toplam Kitap: ${books.length}`;
+            countBtn.innerHTML = `<img src="total-book.png" alt="Kitaplar" width="20" height="20" class="me-1"> Toplam Kitap: ${books.length}`;
         }
 
         // Kitapların ekleneceği alanı seç
@@ -200,15 +200,26 @@ async function addBook(e) {
     const pageCount = document.getElementById('pageCount').value;
     const imageUrl = document.getElementById('imageUrl').value;
 
-    // Sunucuya kaydet
-    await fetch(`${API_URL}/books`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, author, pageCount, imageUrl })
-    });
+    try {
+        // Sunucuya kaydet
+        const res = await fetch(`${API_URL}/books`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title, author, pageCount, imageUrl })
+        });
 
-    alert("✅ Kitap eklendi!");
-    window.location.href = 'home.html';
+        if (res.ok) {
+            alert("✅ Kitap eklendi!");
+            window.location.href = 'home.html';
+        } else {
+            // Hata durumunda bildirim
+            alert("kitabınız eklenmedi");
+        }
+    } catch (error) {
+        // Sunucuya ulaşılamazsa veya ağ hatası olursa
+        console.error("Hata:", error);
+        alert("kitabınız eklenmedi");
+    }
 }
 
 // --- DÜZENLEME SAYFASINI DOLDURMA ---

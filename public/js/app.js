@@ -25,10 +25,17 @@ function checkAuth() {
     } catch (e) { console.error(e); }
 }
 
+// BFCache (Geri tuşu ile gelindiğinde) için kontrol
+window.onpageshow = function (event) {
+    if (event.persisted) {
+        checkAuth();
+    }
+};
+
 // --- ÇIKIŞ YAPMA FONKSİYONU ---
 function logout() {
     localStorage.removeItem('user'); // Kullanıcı bilgisini sil
-    window.location.href = 'index.html'; // Giriş sayfasına yönlendir
+    window.location.replace('index.html'); // Giriş sayfasına yönlendir (Geçmişi silerek)
 }
 
 // --- KİTAP ARAMA (Sarı Efekt & Otomatik Kaydırma) ---
@@ -149,7 +156,7 @@ async function loadBooks() {
         // --- Toplam Kitap Sayısını Güncelle ---
         const countBtn = document.getElementById('total-books-btn');
         if (countBtn) {
-            countBtn.innerHTML = `<img src="total-book.png" alt="Kitaplar" width="20" height="20" class="me-1"> Toplam Kitap: ${books.length}`;
+            countBtn.innerHTML = `<img src="img/total-book.png" alt="Kitaplar" width="20" height="20" class="me-1"> Toplam Kitap: ${books.length}`;
         }
 
         // Kitapların ekleneceği alanı seç

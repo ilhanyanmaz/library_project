@@ -3,57 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kitap Düzenle</title>
+    <title>Kitap Ekle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="kitaplar-696x435.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/kitaplar-696x435.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="edit-bg" onload="loadEditPage()">
+<body class="add-bg" onload="checkAuth()">
 
-    <!-- KOYU TEMA KARTI (Arkası resim olduğu için Modern Koyu Tema) -->
+    <!-- KOYU TEMA KARTI (Modern Dark Glass) -->
     <div class="card card-modern p-5 fade-in" style="width: 500px;">
         <div class="text-center mb-5">
-            <h3 class="mb-3">✏️ Kitap Düzenle</h3>
-            <p class="text-muted-light small">Kitap bilgilerini güncelleyin.</p>
+            <h3 class="mb-3">Yeni Kitap Ekle</h3>
+            <p class="text-muted-light small">Kütüphaneye yeni bir eser kazandırın.</p>
         </div>
 
-        <form onsubmit="updateBook(event)">
-            <input type="hidden" id="edit-id"> <!-- ID gizli tutulur -->
-
-            <!-- Resim URL Alanı -->
+        <form onsubmit="addBook(event)">
+            <!-- Resim URL Girişi -->
             <div class="mb-3">
                 <label for="imageUrl" class="form-label">Kitap Kapak Resmi (URL)</label>
                 <input type="url" id="imageUrl" class="form-control" placeholder="https://ornek.com/resim.jpg" required
                     autocomplete="off">
             </div>
 
+            <!-- Kitap Adı -->
             <div class="mb-3">
                 <label for="title" class="form-label">Kitap Adı</label>
-                <input type="text" id="title" class="form-control" required autocomplete="off">
+                <input type="text" id="title" class="form-control" placeholder="Örn: Sefiller" required
+                    autocomplete="off">
             </div>
 
+            <!-- Yazar -->
             <div class="mb-3">
                 <label for="author" class="form-label">Yazar</label>
-                <input type="text" id="author" class="form-control" required autocomplete="off">
+                <input type="text" id="author" class="form-control" placeholder="Örn: Victor Hugo" required
+                    autocomplete="off">
             </div>
 
+            <!-- Sayfa Sayısı -->
             <div class="mb-5">
                 <label for="pageCount" class="form-label">Sayfa Sayısı</label>
-                <input type="number" id="pageCount" class="form-control" required>
+                <input type="number" id="pageCount" class="form-control" placeholder="1200" required>
             </div>
 
             <!-- Butonlar -->
             <div class="d-grid gap-2">
-                <button class="btn btn-warning-modern py-2">Güncelle</button>
+                <button class="btn btn-primary-modern py-2">Kaydet</button>
                 <!-- Modern İptal Butonu -->
                 <a href="home.html" class="btn-cancel-modern">İptal</a>
             </div>
         </form>
     </div>
 
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

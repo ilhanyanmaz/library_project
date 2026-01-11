@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // --- Database Connection ---
 const db = new sqlite3.Database('./kutuphane.db', (err) => {
@@ -114,7 +114,7 @@ app.delete('/api/books/:id', (req, res) => {
 
 // Serve Frontend
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start Server

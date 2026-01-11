@@ -15,7 +15,7 @@ body {
 /* 1. Giriş ve Kayıt */
 .login-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
-        url('k-o-n-o-kutuphane-1024x684.jpg');
+        url('../img/k-o-n-o-kutuphane-1024x684.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -29,7 +29,7 @@ body {
 /* 2. Ekleme Sayfası */
 .add-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-        url('istanbul-un-en-iyi-4-kutuphanesi-6068.webp');
+        url('../img/istanbul-un-en-iyi-4-kutuphanesi-6068.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -43,7 +43,7 @@ body {
 /* 3. Düzenleme Sayfası */
 .edit-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
-        url('libraries.jpg');
+        url('../img/libraries.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
